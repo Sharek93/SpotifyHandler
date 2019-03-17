@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SpotifyHandler.Components;
+using SpotifyHandler.Helpers;
+using System;
 
 namespace SpotifyHandler
 {
@@ -6,7 +8,12 @@ namespace SpotifyHandler
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Spotify Handler");
+            Config.LoadConfig();
+
+            SpotifyConnector.GetPlaylist(Config.AppConfig.PlaylistId);
+
+            Console.ReadKey();
         }
     }
 }
